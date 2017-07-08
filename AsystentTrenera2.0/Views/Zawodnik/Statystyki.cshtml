@@ -1,0 +1,15 @@
+﻿@model AsystentTrenera2.Models.Zawodnik
+
+@{
+    ViewBag.Title = "Statystyki";
+}
+
+<h2>Statystyki</h2>
+<p>@Model.Imie  @Model.Nazwisko</p>
+<p>Pozycja    @Model.PozycjaZawodnika        Przeważająca noga     @Model.Noga</p>
+<p>Wiek       @Model.Wiek     Waga     @Model.Waga      Wzorst      @Model.Wzrost</p>
+<p>Statystyski</p>
+<p>Gole       @Model.OcenaOgolna.Gole        Strzały    @Model.OcenaOgolna.Strzal</p>
+<p>Rajdy      @Model.OcenaOgolna.Rajdy       Podania    @Model.OcenaOgolna.Podania</p>
+<p>Przechwyty @Model.OcenaOgolna.Przechwyty  Faule      @Model.OcenaOgolna.Faule</p>
+<p>Błędy      @Model.OcenaOgolna.Bledy</p>

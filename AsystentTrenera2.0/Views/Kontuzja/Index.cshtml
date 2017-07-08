@@ -1,0 +1,59 @@
+@model IEnumerable<AsystentTrenera2.Models.Kontuzja>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            Aktualna
+        </th>
+        <th>
+            KontuzjaNazwa
+        </th>
+        <th>
+            KontuzjaPoczatek
+        </th>
+        <th>
+            KontuzjaZakonczenie
+        </th>
+        <th>
+            Zawodnik
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.KontuzjaId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.KontuzjaId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.KontuzjaId })
+        </td>
+        <td>
+			@item.Aktualna
+        </td>
+        <td>
+			@item.KontuzjaNazwa
+        </td>
+        <td>
+			@String.Format("{0:g}", item.KontuzjaPoczatek)
+        </td>
+        <td>
+			@String.Format("{0:g}", item.KontuzjaZakonczenie)
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.Zawodnik).ToString()
+        </td>
+    </tr>
+}
+
+</table>
+
+

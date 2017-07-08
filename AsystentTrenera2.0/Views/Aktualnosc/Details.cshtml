@@ -1,0 +1,23 @@
+@model AsystentTrenera2.Models.Aktualnosc
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Aktualnosc</legend>
+
+    <div class="display-label">Tekst</div>
+    <div class="display-field">@Model.Tekst</div>
+
+    <div class="display-label">Link</div>
+    <div class="display-field">@Model.Link</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.AktualnoscId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

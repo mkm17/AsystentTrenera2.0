@@ -1,0 +1,28 @@
+﻿@model AsystentTrenera2.Models.Ocena
+
+@{
+    ViewBag.Title = "OcenaZawodnika";
+}
+
+<h2>OcenaZawodnika</h2>
+
+<h2>Statystyki</h2>
+<p>@Model.Zawodnik.Imie  @Model.Zawodnik.Nazwisko</p>
+<p>Pozycja    @Model.Pozycja     </p>  
+<p>Statystyski</p>
+<p>Gole       @Model.Gole        Strzały    @Model.Strzal</p>
+<p>Rajdy      @Model.Rajdy       Podania    @Model.Podania</p>
+<p>Przechwyty @Model.Przechwyty  Faule      @Model.Faule</p>
+<p>Błędy      @Model.Bledy</p>
+
+@using (Html.BeginForm(new { ocenaZaMecz= Model}))
+{
+    <fieldset>
+        <legend>Ocena</legend>
+
+        @Html.TextBox("Ocena")
+        <p>
+            <input type="submit" value="Dodaj" />
+        </p>
+    </fieldset>
+}

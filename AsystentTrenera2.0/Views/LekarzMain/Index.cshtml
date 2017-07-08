@@ -1,0 +1,40 @@
+﻿@model IEnumerable<AsystentTrenera2.Models.Zawodnik>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@Html.ActionLink("Dodaj Kontuzje", "Create", "Kontuzja");
+
+<table>
+    <tr>
+        <th></th>
+        <th>Imie</th>
+        <th>Nazwisko</th>
+        <th>Kontuzja</th>
+        <th>Ile dni do końca</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+        <td></td>
+        <td>@item.Imie</td>
+        <td>@item.Nazwisko</td>
+        <td></td>
+        <td></td>
+        </tr>
+        foreach (var kontuzja in item.Kontuzjas)
+        {
+        <tr>
+            <td></td>
+            <td>@Html.ActionLink("Edytuj", "Edit", "Kotuzja", new { id = kontuzja.KontuzjaId }, null);</td>
+            <td></td>
+            <td>@kontuzja.KontuzjaNazwa</td>
+            <td>@kontuzja.KontuzjaZakonczenie</td>
+        </tr>
+        }
+        
+    }
+</table>
+<p>@Html.ActionLink("Wiadomości","Index","Wiadomosci")</p>

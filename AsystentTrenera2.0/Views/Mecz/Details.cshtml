@@ -1,0 +1,32 @@
+@model AsystentTrenera2.Models.Mecz
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Mecz</legend>
+
+    <div class="display-label">Przeciwnik</div>
+    <div class="display-field">@Model.Przeciwnik</div>
+
+    <div class="display-label">Data</div>
+    <div class="display-field">@String.Format("{0:g}", Model.Data)</div>
+
+    <div class="display-label">Dom</div>
+    <div class="display-field">@Model.Dom</div>
+
+    <div class="display-label">Strzelone</div>
+    <div class="display-field">@Model.Strzelone</div>
+
+    <div class="display-label">Stracone</div>
+    <div class="display-field">@Model.Stracone</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.MeczId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

@@ -1,0 +1,21 @@
+﻿@model AsystentTrenera2.Models.Zawodnik
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>@Model.Imie @Model.Nazwisko</h2>
+<p>@Html.ActionLink("Twoje satystyki", "Statystyki", "Zawodnik", new { IdZawodnika1=Model.ZawodnikId},null)</p>
+<p>@Html.ActionLink("Wykres Formy", "WykresFormyZawodnika", "Zawodnik", new { IdZawodnika1 = Model.ZawodnikId }, null)</p>
+<p></p>
+<p>@Html.ActionLink("Wiadomości","Index","Wiadomosci")</p>
+<br />
+<br />
+<div>
+@using (Html.BeginForm("WykresFormyZawodnika","Zawodnik",new { IdZawodnika1 = Model.ZawodnikId }))
+{
+    @Html.DropDownList("IdZawodnika2", (SelectList)ViewBag.Zawodnicy,"Choose...")
+    <p><input type="submit" value="Porównaj" class="input-btn" /></p>
+}
+</div>
+

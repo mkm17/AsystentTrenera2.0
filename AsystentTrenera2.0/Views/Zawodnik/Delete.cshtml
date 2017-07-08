@@ -1,0 +1,53 @@
+@model AsystentTrenera2.Models.Zawodnik
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Zawodnik</legend>
+
+    <div class="display-label">Imie</div>
+    <div class="display-field">@Model.Imie</div>
+
+    <div class="display-label">PozycjaZawodnika</div>
+    <div class="display-field">@Model.PozycjaZawodnika</div>
+
+    <div class="display-label">Nazwisko</div>
+    <div class="display-field">@Model.Nazwisko</div>
+
+    <div class="display-label">Wzrost</div>
+    <div class="display-field">@Model.Wzrost</div>
+
+    <div class="display-label">Waga</div>
+    <div class="display-field">@Model.Waga</div>
+
+    <div class="display-label">Wiek</div>
+    <div class="display-field">@Model.Wiek</div>
+
+    <div class="display-label">Noga</div>
+    <div class="display-field">@Model.Noga</div>
+
+    <div class="display-label">UserName</div>
+    <div class="display-field">@Model.UserName</div>
+
+    <div class="display-label">Ocenas</div>
+    <div class="display-field">@(Model.Ocenas == null ? "None" : Model.Ocenas.Count.ToString())</div>
+
+    <div class="display-label">OcenaOgolna</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.OcenaOgolna).ToString()</div>
+
+    <div class="display-label">Kontuzjas</div>
+    <div class="display-field">@(Model.Kontuzjas == null ? "None" : Model.Kontuzjas.Count.ToString())</div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+
+

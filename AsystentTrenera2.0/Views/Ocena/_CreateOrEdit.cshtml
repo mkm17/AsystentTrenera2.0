@@ -1,0 +1,181 @@
+@model AsystentTrenera2.Models.Ocena
+
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Ocen)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Ocen)
+    @Html.ValidationMessageFor(model => model.Ocen)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Gole)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Gole)
+    @Html.ValidationMessageFor(model => model.Gole)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Strzal)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Strzal)
+    @Html.ValidationMessageFor(model => model.Strzal)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Podania)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Podania)
+    @Html.ValidationMessageFor(model => model.Podania)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Faule)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Faule)
+    @Html.ValidationMessageFor(model => model.Faule)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Bledy)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Bledy)
+    @Html.ValidationMessageFor(model => model.Bledy)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Przechwyty)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Przechwyty)
+    @Html.ValidationMessageFor(model => model.Przechwyty)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Rajdy)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Rajdy)
+    @Html.ValidationMessageFor(model => model.Rajdy)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Kilometry)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Kilometry)
+    @Html.ValidationMessageFor(model => model.Kilometry)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.GoleStrzelone)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.GoleStrzelone)
+    @Html.ValidationMessageFor(model => model.GoleStrzelone)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.StrzalyCelne)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.StrzalyCelne)
+    @Html.ValidationMessageFor(model => model.StrzalyCelne)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.StrzalyNiecelne)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.StrzalyNiecelne)
+    @Html.ValidationMessageFor(model => model.StrzalyNiecelne)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.PodaniaCelne)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.PodaniaCelne)
+    @Html.ValidationMessageFor(model => model.PodaniaCelne)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.PodaniaNiecelne)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.PodaniaNiecelne)
+    @Html.ValidationMessageFor(model => model.PodaniaNiecelne)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.StratywObronie)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.StratywObronie)
+    @Html.ValidationMessageFor(model => model.StratywObronie)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Odbiory)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Odbiory)
+    @Html.ValidationMessageFor(model => model.Odbiory)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.RajdyUdane)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.RajdyUdane)
+    @Html.ValidationMessageFor(model => model.RajdyUdane)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.RajdyNieudane)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.RajdyNieudane)
+    @Html.ValidationMessageFor(model => model.RajdyNieudane)
+</div>
+
+<div class="editor-label">
+    Mecz
+</div>
+<div class="editor-field">
+    @Html.DropDownListFor(model => model.MeczId, ((IEnumerable<AsystentTrenera2.Models.Mecz>)ViewBag.PossibleMecz).Select(option => new SelectListItem {
+        Text = Html.DisplayTextFor(_ => option).ToString(), 
+        Value = option.MeczId.ToString(),
+        Selected = (Model != null) && (option.MeczId == Model.MeczId)
+    }), "Choose...")
+    @Html.ValidationMessageFor(model => model.MeczId)
+</div>
+<div class="editor-label">
+    Pozycja
+</div>
+<div class="editor-field">
+    @Html.DropDownListFor(model => model.PozycjaId, ((IEnumerable<AsystentTrenera2.Models.Pozycja>)ViewBag.PossiblePozycja).Select(option => new SelectListItem {
+        Text = Html.DisplayTextFor(_ => option).ToString(), 
+        Value = option.PozycjaId.ToString(),
+        Selected = (Model != null) && (option.PozycjaId == Model.PozycjaId)
+    }), "Choose...")
+    @Html.ValidationMessageFor(model => model.PozycjaId)
+</div>
+<div class="editor-label">
+    Zawodnik
+</div>
+<div class="editor-field">
+    @Html.DropDownListFor(model => model.ZawodnikId, ((IEnumerable<AsystentTrenera2.Models.Zawodnik>)ViewBag.PossibleZawodnik).Select(option => new SelectListItem {
+        Text = Html.DisplayTextFor(_ => option).ToString(), 
+        Value = option.ZawodnikId.ToString(),
+        Selected = (Model != null) && (option.ZawodnikId == Model.ZawodnikId)
+    }), "Choose...")
+    @Html.ValidationMessageFor(model => model.ZawodnikId)
+</div>

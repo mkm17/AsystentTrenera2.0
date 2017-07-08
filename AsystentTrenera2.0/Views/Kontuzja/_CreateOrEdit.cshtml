@@ -1,0 +1,47 @@
+@model AsystentTrenera2.Models.Kontuzja
+
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Aktualna)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Aktualna)
+    @Html.ValidationMessageFor(model => model.Aktualna)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.KontuzjaNazwa)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.KontuzjaNazwa)
+    @Html.ValidationMessageFor(model => model.KontuzjaNazwa)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.KontuzjaPoczatek)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.KontuzjaPoczatek)
+    @Html.ValidationMessageFor(model => model.KontuzjaPoczatek)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.KontuzjaZakonczenie)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.KontuzjaZakonczenie)
+    @Html.ValidationMessageFor(model => model.KontuzjaZakonczenie)
+</div>
+
+<div class="editor-label">
+    Zawodnik
+</div>
+<div class="editor-field">
+    @Html.DropDownListFor(model => model.ZawodnikId, ((IEnumerable<AsystentTrenera2.Models.Zawodnik>)ViewBag.PossibleZawodnik).Select(option => new SelectListItem {
+        Text = Html.DisplayTextFor(_ => option).ToString(), 
+        Value = option.ZawodnikId.ToString(),
+        Selected = (Model != null) && (option.ZawodnikId == Model.ZawodnikId)
+    }), "Choose...")
+    @Html.ValidationMessageFor(model => model.ZawodnikId)
+</div>

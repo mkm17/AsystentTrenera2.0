@@ -1,0 +1,84 @@
+@model AsystentTrenera2.Models.Pozycja
+
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Nazwa)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Nazwa)
+    @Html.ValidationMessageFor(model => model.Nazwa)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Noga)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Noga)
+    @Html.ValidationMessageFor(model => model.Noga)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Strona)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Strona)
+    @Html.ValidationMessageFor(model => model.Strona)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Gole)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Gole)
+    @Html.ValidationMessageFor(model => model.Gole)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.StrzalyCelne)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.StrzalyCelne)
+    @Html.ValidationMessageFor(model => model.StrzalyCelne)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.PodaniaCelne)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.PodaniaCelne)
+    @Html.ValidationMessageFor(model => model.PodaniaCelne)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Faule)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Faule)
+    @Html.ValidationMessageFor(model => model.Faule)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Bledy)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Bledy)
+    @Html.ValidationMessageFor(model => model.Bledy)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Przechwyty)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Przechwyty)
+    @Html.ValidationMessageFor(model => model.Przechwyty)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Rajdy)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Rajdy)
+    @Html.ValidationMessageFor(model => model.Rajdy)
+</div>
+

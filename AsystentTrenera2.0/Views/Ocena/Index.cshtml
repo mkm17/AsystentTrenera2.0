@@ -1,0 +1,161 @@
+@model IEnumerable<AsystentTrenera2.Models.Ocena>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            Mecz
+        </th>
+        <th>
+            Pozycja
+        </th>
+        <th>
+            Zawodnik
+        </th>
+        <th>
+            OcenaInnychs
+        </th>
+        <th>
+            Ocen
+        </th>
+        <th>
+            Gole
+        </th>
+        <th>
+            Strzal
+        </th>
+        <th>
+            Podania
+        </th>
+        <th>
+            Faule
+        </th>
+        <th>
+            Bledy
+        </th>
+        <th>
+            Przechwyty
+        </th>
+        <th>
+            Rajdy
+        </th>
+        <th>
+            Kilometry
+        </th>
+        <th>
+            GoleStrzelone
+        </th>
+        <th>
+            StrzalyCelne
+        </th>
+        <th>
+            StrzalyNiecelne
+        </th>
+        <th>
+            PodaniaCelne
+        </th>
+        <th>
+            PodaniaNiecelne
+        </th>
+        <th>
+            StratywObronie
+        </th>
+        <th>
+            Odbiory
+        </th>
+        <th>
+            RajdyUdane
+        </th>
+        <th>
+            RajdyNieudane
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.OcenaId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.OcenaId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.OcenaId })
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.Mecz).ToString()
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.Pozycja).ToString()
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.Zawodnik).ToString()
+        </td>
+        <td>
+			@(item.OcenaInnychs == null ? "None" : item.OcenaInnychs.Count.ToString())
+        </td>
+        <td>
+			@String.Format("{0:F}", item.Ocen)
+        </td>
+        <td>
+			@String.Format("{0:F}", item.Gole)
+        </td>
+        <td>
+			@String.Format("{0:F}", item.Strzal)
+        </td>
+        <td>
+			@String.Format("{0:F}", item.Podania)
+        </td>
+        <td>
+			@String.Format("{0:F}", item.Faule)
+        </td>
+        <td>
+			@String.Format("{0:F}", item.Bledy)
+        </td>
+        <td>
+			@String.Format("{0:F}", item.Przechwyty)
+        </td>
+        <td>
+			@String.Format("{0:F}", item.Rajdy)
+        </td>
+        <td>
+			@String.Format("{0:F}", item.Kilometry)
+        </td>
+        <td>
+			@item.GoleStrzelone
+        </td>
+        <td>
+			@item.StrzalyCelne
+        </td>
+        <td>
+			@item.StrzalyNiecelne
+        </td>
+        <td>
+			@item.PodaniaCelne
+        </td>
+        <td>
+			@item.PodaniaNiecelne
+        </td>
+        <td>
+			@item.StratywObronie
+        </td>
+        <td>
+			@item.Odbiory
+        </td>
+        <td>
+			@item.RajdyUdane
+        </td>
+        <td>
+			@item.RajdyNieudane
+        </td>
+    </tr>
+}
+
+</table>
+
+

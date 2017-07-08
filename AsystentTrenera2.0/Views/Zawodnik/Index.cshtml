@@ -1,0 +1,95 @@
+@model IEnumerable<AsystentTrenera2.Models.Zawodnik>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            Imie
+        </th>
+        <th>
+            PozycjaZawodnika
+        </th>
+        <th>
+            Nazwisko
+        </th>
+        <th>
+            Wzrost
+        </th>
+        <th>
+            Waga
+        </th>
+        <th>
+            Wiek
+        </th>
+        <th>
+            Noga
+        </th>
+        <th>
+            UserName
+        </th>
+        <th>
+            Ocenas
+        </th>
+        <th>
+            OcenaOgolna
+        </th>
+        <th>
+            Kontuzjas
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ZawodnikId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ZawodnikId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ZawodnikId })
+        </td>
+        <td>
+			@item.Imie
+        </td>
+        <td>
+			@item.PozycjaZawodnika
+        </td>
+        <td>
+			@item.Nazwisko
+        </td>
+        <td>
+			@item.Wzrost
+        </td>
+        <td>
+			@item.Waga
+        </td>
+        <td>
+			@item.Wiek
+        </td>
+        <td>
+			@item.Noga
+        </td>
+        <td>
+			@item.UserName
+        </td>
+        <td>
+			@(item.Ocenas == null ? "None" : item.Ocenas.Count.ToString())
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.OcenaOgolna).ToString()
+        </td>
+        <td>
+			@(item.Kontuzjas == null ? "None" : item.Kontuzjas.Count.ToString())
+        </td>
+    </tr>
+}
+
+</table>
+
+

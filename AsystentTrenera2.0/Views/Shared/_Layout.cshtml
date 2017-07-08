@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css")" rel="stylesheet" type="text/css" />
+    
+    <script src="/Scripts/jquery-1.9.1.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery-ui-1.10.3.custom.js" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/modernizr-1.7.min.js")" type="text/javascript"></script>
+
+    <script src="@Url.Content("~/Scripts/jquery.globalize/globalize.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.globalize/cultures/globalize.culture.pl-PL.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+    $.validator.methods.number = function (value, element) {
+        return !isNaN(Globalize.parseFloat(value));
+    }
+
+    $(document).ready(function () {
+        Globalize.culture('pl-PL');
+    });
+    </script>
+    <script type="text/javascript">
+        /// <reference path="jquery-2.0.0-vsdoc.js" />
+        /// <reference path="jquery-ui-1.8.24.js" />
+        $(document).ready(function () {
+            $("#date").datepicker();
+        });
+</script>
+</head>
+<body>
+    <div class="page">
+        <header>
+            <div id="title">
+                <h1>Amatorska Drużyna Piłkarska</h1>
+            </div>
+            <div id="logindisplay">
+                @Html.Partial("_LogOnPartial")
+            </div>
+            <nav>
+                <ul id="menu">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Trener","Index","TrenerMain")</li>
+                    <li>@Html.ActionLink("Zawodnik","Index","ZawodnikMain")</li>
+                    <li>@Html.ActionLink("Lekarz","Index","LekarzMain")</li>
+                    <li>@Html.ActionLink("Kontakt", "About", "Home")</li>
+                    
+                </ul>
+            </nav>
+        </header>
+        <section id="main">
+            @RenderBody()
+        </section>
+        <footer>
+        </footer>
+    </div>
+</body>
+</html>

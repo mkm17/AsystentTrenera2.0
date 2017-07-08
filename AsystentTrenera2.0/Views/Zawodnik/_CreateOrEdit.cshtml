@@ -1,0 +1,79 @@
+@model AsystentTrenera2.Models.Zawodnik
+
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Imie)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Imie)
+    @Html.ValidationMessageFor(model => model.Imie)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.PozycjaZawodnika)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.PozycjaZawodnika)
+    @Html.ValidationMessageFor(model => model.PozycjaZawodnika)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Nazwisko)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Nazwisko)
+    @Html.ValidationMessageFor(model => model.Nazwisko)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Wzrost)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Wzrost)
+    @Html.ValidationMessageFor(model => model.Wzrost)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Waga)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Waga)
+    @Html.ValidationMessageFor(model => model.Waga)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Wiek)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Wiek)
+    @Html.ValidationMessageFor(model => model.Wiek)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Noga)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Noga)
+    @Html.ValidationMessageFor(model => model.Noga)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.UserName)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.UserName)
+    @Html.ValidationMessageFor(model => model.UserName)
+</div>
+
+<div class="editor-label">
+    OcenaOgolna
+</div>
+<div class="editor-field">
+    @Html.DropDownListFor(model => model.OcenaOgolnaId, ((IEnumerable<AsystentTrenera2.Models.OcenaOgolna>)ViewBag.PossibleOcenaOgolna).Select(option => new SelectListItem {
+        Text = Html.DisplayTextFor(_ => option).ToString(), 
+        Value = option.OcenaOgolnaId.ToString(),
+        Selected = (Model != null) && (option.OcenaOgolnaId == Model.OcenaOgolnaId)
+    }), "Choose...")
+    @Html.ValidationMessageFor(model => model.OcenaOgolnaId)
+</div>

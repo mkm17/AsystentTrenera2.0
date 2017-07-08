@@ -1,0 +1,47 @@
+@model AsystentTrenera2.Models.PozycjaRys
+
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.X1)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.X1)
+    @Html.ValidationMessageFor(model => model.X1)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.X2)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.X2)
+    @Html.ValidationMessageFor(model => model.X2)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Y1)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Y1)
+    @Html.ValidationMessageFor(model => model.Y1)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Y2)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Y2)
+    @Html.ValidationMessageFor(model => model.Y2)
+</div>
+
+<div class="editor-label">
+    Pozycja
+</div>
+<div class="editor-field">
+    @Html.DropDownListFor(model => model.PozycjaId, ((IEnumerable<AsystentTrenera2.Models.Pozycja>)ViewBag.PossiblePozycja).Select(option => new SelectListItem {
+        Text = Html.DisplayTextFor(_ => option).ToString(), 
+        Value = option.PozycjaId.ToString(),
+        Selected = (Model != null) && (option.PozycjaId == Model.PozycjaId)
+    }), "Choose...")
+    @Html.ValidationMessageFor(model => model.PozycjaId)
+</div>

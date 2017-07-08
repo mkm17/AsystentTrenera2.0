@@ -1,0 +1,83 @@
+@model AsystentTrenera2.Models.Ocena
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Ocena</legend>
+
+    <div class="display-label">Mecz</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.Mecz).ToString()</div>
+
+    <div class="display-label">Pozycja</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.Pozycja).ToString()</div>
+
+    <div class="display-label">Zawodnik</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.Zawodnik).ToString()</div>
+
+    <div class="display-label">OcenaInnychs</div>
+    <div class="display-field">@(Model.OcenaInnychs == null ? "None" : Model.OcenaInnychs.Count.ToString())</div>
+
+    <div class="display-label">Ocen</div>
+    <div class="display-field">@String.Format("{0:F}", Model.Ocen)</div>
+
+    <div class="display-label">Gole</div>
+    <div class="display-field">@String.Format("{0:F}", Model.Gole)</div>
+
+    <div class="display-label">Strzal</div>
+    <div class="display-field">@String.Format("{0:F}", Model.Strzal)</div>
+
+    <div class="display-label">Podania</div>
+    <div class="display-field">@String.Format("{0:F}", Model.Podania)</div>
+
+    <div class="display-label">Faule</div>
+    <div class="display-field">@String.Format("{0:F}", Model.Faule)</div>
+
+    <div class="display-label">Bledy</div>
+    <div class="display-field">@String.Format("{0:F}", Model.Bledy)</div>
+
+    <div class="display-label">Przechwyty</div>
+    <div class="display-field">@String.Format("{0:F}", Model.Przechwyty)</div>
+
+    <div class="display-label">Rajdy</div>
+    <div class="display-field">@String.Format("{0:F}", Model.Rajdy)</div>
+
+    <div class="display-label">Kilometry</div>
+    <div class="display-field">@String.Format("{0:F}", Model.Kilometry)</div>
+
+    <div class="display-label">GoleStrzelone</div>
+    <div class="display-field">@Model.GoleStrzelone</div>
+
+    <div class="display-label">StrzalyCelne</div>
+    <div class="display-field">@Model.StrzalyCelne</div>
+
+    <div class="display-label">StrzalyNiecelne</div>
+    <div class="display-field">@Model.StrzalyNiecelne</div>
+
+    <div class="display-label">PodaniaCelne</div>
+    <div class="display-field">@Model.PodaniaCelne</div>
+
+    <div class="display-label">PodaniaNiecelne</div>
+    <div class="display-field">@Model.PodaniaNiecelne</div>
+
+    <div class="display-label">StratywObronie</div>
+    <div class="display-field">@Model.StratywObronie</div>
+
+    <div class="display-label">Odbiory</div>
+    <div class="display-field">@Model.Odbiory</div>
+
+    <div class="display-label">RajdyUdane</div>
+    <div class="display-field">@Model.RajdyUdane</div>
+
+    <div class="display-label">RajdyNieudane</div>
+    <div class="display-field">@Model.RajdyNieudane</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.OcenaId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

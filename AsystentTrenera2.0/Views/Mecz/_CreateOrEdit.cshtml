@@ -1,0 +1,44 @@
+@model AsystentTrenera2.Models.Mecz
+
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Przeciwnik)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Przeciwnik)
+    @Html.ValidationMessageFor(model => model.Przeciwnik)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Data)
+</div>
+<div class="editor-field">
+    @Html.TextBoxFor(model => model.Data, new { id = "date" })
+    @Html.ValidationMessageFor(model => model.Data)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Dom)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Dom)
+    @Html.ValidationMessageFor(model => model.Dom)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Strzelone)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Strzelone)
+    @Html.ValidationMessageFor(model => model.Strzelone)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Stracone)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Stracone)
+    @Html.ValidationMessageFor(model => model.Stracone)
+</div>
+

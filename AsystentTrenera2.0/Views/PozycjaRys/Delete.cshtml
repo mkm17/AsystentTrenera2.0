@@ -1,0 +1,35 @@
+@model AsystentTrenera2.Models.PozycjaRys
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>PozycjaRys</legend>
+
+    <div class="display-label">X1</div>
+    <div class="display-field">@Model.X1</div>
+
+    <div class="display-label">X2</div>
+    <div class="display-field">@Model.X2</div>
+
+    <div class="display-label">Y1</div>
+    <div class="display-field">@Model.Y1</div>
+
+    <div class="display-label">Y2</div>
+    <div class="display-field">@Model.Y2</div>
+
+    <div class="display-label">Pozycja</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.Pozycja).ToString()</div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+
+

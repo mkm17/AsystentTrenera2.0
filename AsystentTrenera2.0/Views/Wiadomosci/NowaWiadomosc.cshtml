@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "NowaWiadomosc";
+}
+
+<h2>NowaWiadomosc</h2>
+@Html.BeginForm("Wyslij","Wiadomosci")
+{
+<p>Odbiorca @Html.DropDownList("email", (SelectList)ViewBag.lista, "Wybierz ...")</p>
+<p>Temat @Html.TextBox("temat")</p>
+<p>Haslo @Html.Password("haslo")</p>
+<p>@Html.TextArea("tresc")</p>
+<p><input type="submit" value="Wyślij" class="input-btn" /></p>
+}
+

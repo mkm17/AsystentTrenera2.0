@@ -1,0 +1,45 @@
+﻿@model IEnumerable<AsystentTrenera2.Models.Zawodnik>
+@{
+    ViewBag.Title = "Sklad";
+}
+
+<h2>Sklad</h2>
+
+<table>
+<tr>
+    <th>Imie</th>
+    <th>Nazwisko</th>
+    <th>Pozycja</th>
+    <th>Noga</th>
+    <th>Wiek</th>
+    <th>Ocena</th>
+    <th>Kontuzja</th>
+    <th>Szczegóły</th>
+    <th>Forma</th>
+
+</tr>
+@foreach (var zawodnik in Model)
+{
+<tr>
+    <td>@zawodnik.Imie</td>
+    <td>@zawodnik.Nazwisko</td>
+    <td>@zawodnik.PozycjaZawodnika</td>
+    <td>@zawodnik.Noga</td>
+    <td>@zawodnik.Wiek</td>
+    <td>@zawodnik.OcenaOgolna.Ocen</td>
+    <td>@zawodnik.Kontuzjas.Count</td>
+    <td>@Html.ActionLink("=>", "Statystyki", "Zawodnik", new { IdZawodnika1 = zawodnik.ZawodnikId }, null)</td>
+    <td>@Html.ActionLink("=>", "WykresFormyZawodnika", "Zawodnik", new { IdZawodnika1 = zawodnik.ZawodnikId }, null)</td>
+</tr>
+}
+</table>
+<div>
+Porównaj forme 2 zawodników.
+@using (Html.BeginForm("WykresFormyZawodnika","Zawodnik"))
+{
+    @Html.DropDownList("IdZawodnika1", (SelectList)ViewBag.Zawodnicy,"Zawodnik nr 1")
+    
+    @Html.DropDownList("IdZawodnika2", (SelectList)ViewBag.Zawodnicy,"Zawodnik nr 2")
+    <p><input type="submit" value="Porównaj" class="input-btn" /></p>
+}
+</div>

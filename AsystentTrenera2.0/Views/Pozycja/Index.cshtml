@@ -1,0 +1,89 @@
+@model IEnumerable<AsystentTrenera2.Models.Pozycja>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            Nazwa
+        </th>
+        <th>
+            Noga
+        </th>
+        <th>
+            Strona
+        </th>
+        <th>
+            Gole
+        </th>
+        <th>
+            StrzalyCelne
+        </th>
+        <th>
+            PodaniaCelne
+        </th>
+        <th>
+            Faule
+        </th>
+        <th>
+            Bledy
+        </th>
+        <th>
+            Przechwyty
+        </th>
+        <th>
+            Rajdy
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PozycjaId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PozycjaId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PozycjaId })
+        </td>
+        <td>
+			@item.Nazwa
+        </td>
+        <td>
+			@item.Noga
+        </td>
+        <td>
+			@item.Strona
+        </td>
+        <td>
+			@item.Gole
+        </td>
+        <td>
+			@item.StrzalyCelne
+        </td>
+        <td>
+			@item.PodaniaCelne
+        </td>
+        <td>
+			@item.Faule
+        </td>
+        <td>
+			@item.Bledy
+        </td>
+        <td>
+			@item.Przechwyty
+        </td>
+        <td>
+			@item.Rajdy
+        </td>
+    </tr>
+}
+
+</table>
+
+

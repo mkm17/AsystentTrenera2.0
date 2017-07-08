@@ -1,0 +1,33 @@
+﻿@model IEnumerable<AsystentTrenera2.Models.Ocena>
+@{
+    ViewBag.Title = "StatystykiMeczu";
+
+}
+
+<h2>StatystykiMeczu</h2>
+
+<p>Przeciwnik: @ViewBag.Mecz.Przeciwnik</p>
+<p>Strzelone: @ViewBag.Mecz.Strzelone</p>
+<p>Stracone: @ViewBag.Mecz.Stracone</p>
+
+<table>
+<tr>
+<th></th>
+<th>Imie</th>
+<th>Nazwisko</th>
+<th>Ocena</th>
+<th>OcenaZawodników</th>
+<th>Dodaj własną Ocene</th>
+</tr>
+@foreach (var item in Model)
+{
+    <tr>
+    <td></td>
+    <td>@item.Zawodnik.Imie</td>
+    <td>@item.Zawodnik.Nazwisko</td>
+    <td>@item.ObliczOcene()</td>
+    <td>@item.ObliczOceneInnych()</td>
+    <td>@Html.ActionLink("Dodaj", "OcenaZawodnika", new { idZawodnika=item.ZawodnikId,idmeczu=item.MeczId }, null)</td>
+    </tr>
+}
+</table>

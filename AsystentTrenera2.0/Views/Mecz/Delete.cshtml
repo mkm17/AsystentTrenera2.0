@@ -1,0 +1,35 @@
+@model AsystentTrenera2.Models.Mecz
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Mecz</legend>
+
+    <div class="display-label">Przeciwnik</div>
+    <div class="display-field">@Model.Przeciwnik</div>
+
+    <div class="display-label">Data</div>
+    <div class="display-field">@String.Format("{0:g}", Model.Data)</div>
+
+    <div class="display-label">Dom</div>
+    <div class="display-field">@Model.Dom</div>
+
+    <div class="display-label">Strzelone</div>
+    <div class="display-field">@Model.Strzelone</div>
+
+    <div class="display-label">Stracone</div>
+    <div class="display-field">@Model.Stracone</div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+
+

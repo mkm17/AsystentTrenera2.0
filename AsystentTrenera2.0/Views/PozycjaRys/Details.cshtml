@@ -1,0 +1,32 @@
+@model AsystentTrenera2.Models.PozycjaRys
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>PozycjaRys</legend>
+
+    <div class="display-label">X1</div>
+    <div class="display-field">@Model.X1</div>
+
+    <div class="display-label">X2</div>
+    <div class="display-field">@Model.X2</div>
+
+    <div class="display-label">Y1</div>
+    <div class="display-field">@Model.Y1</div>
+
+    <div class="display-label">Y2</div>
+    <div class="display-field">@Model.Y2</div>
+
+    <div class="display-label">Pozycja</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.Pozycja).ToString()</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.PozycjaRysId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

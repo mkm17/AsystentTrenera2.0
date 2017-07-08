@@ -1,0 +1,47 @@
+@model AsystentTrenera2.Models.Pozycja
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Pozycja</legend>
+
+    <div class="display-label">Nazwa</div>
+    <div class="display-field">@Model.Nazwa</div>
+
+    <div class="display-label">Noga</div>
+    <div class="display-field">@Model.Noga</div>
+
+    <div class="display-label">Strona</div>
+    <div class="display-field">@Model.Strona</div>
+
+    <div class="display-label">Gole</div>
+    <div class="display-field">@Model.Gole</div>
+
+    <div class="display-label">StrzalyCelne</div>
+    <div class="display-field">@Model.StrzalyCelne</div>
+
+    <div class="display-label">PodaniaCelne</div>
+    <div class="display-field">@Model.PodaniaCelne</div>
+
+    <div class="display-label">Faule</div>
+    <div class="display-field">@Model.Faule</div>
+
+    <div class="display-label">Bledy</div>
+    <div class="display-field">@Model.Bledy</div>
+
+    <div class="display-label">Przechwyty</div>
+    <div class="display-field">@Model.Przechwyty</div>
+
+    <div class="display-label">Rajdy</div>
+    <div class="display-field">@Model.Rajdy</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.PozycjaId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

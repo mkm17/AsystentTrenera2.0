@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="C:\Users\Michał\Documents\Visual Studio 2010\Projects\AsystentTrenera2.0\AsystentTrenera2.0\obj\Release\Package\PackageTmp" managedRuntimeVersion="v4.0" />
+  <setAcl path="C:\Users\Michał\Documents\Visual Studio 2010\Projects\AsystentTrenera2.0\AsystentTrenera2.0\obj\Release\Package\PackageTmp" setAclResourceType="Directory" />
+  <setAcl path="C:\Users\Michał\Documents\Visual Studio 2010\Projects\AsystentTrenera2.0\AsystentTrenera2.0\obj\Release\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+</sitemanifest>

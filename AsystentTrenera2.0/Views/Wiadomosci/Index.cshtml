@@ -1,0 +1,61 @@
+﻿@model IEnumerable<OpenPop.Mime.Message>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@if (Model == null)
+{
+    <p>Nie można wyświetlić wiadomości wpisz hasło bądz sprawdź połączenie z internetem.</p>
+    using (Html.BeginForm())
+    {
+        <div class="editor-field">
+            @Html.Password("haslo")
+        </div>   
+        <p>
+            <input type="submit" value="OK" />
+        </p>
+    }
+}
+else
+{
+    <p>@Html.ActionLink("Utwórz wiadomość","NowaWiadomosc")</p>
+    <div id="wiadomosc"></div>
+    <table>
+    <tr>
+        <th>Nadawca</th>
+        <th>Temat</th>
+        
+    </tr>
+    @foreach (OpenPop.Mime.Message wiadomosc in Model)
+    {
+        if (wiadomosc.MessagePart.MessageParts != null)
+        {
+      <tr class="klik">
+         <td>@wiadomosc.Headers.From</td>
+         <td>@wiadomosc.Headers.Subject</td>
+         
+         
+      </tr>
+            if (wiadomosc.MessagePart.MessageParts.Count >1 )
+            {
+        <tr class="wiadomosc">
+        <td colspan="2">@Html.Raw(wiadomosc.MessagePart.MessageParts[1].GetBodyAsText())</td>
+        
+        </tr>
+            }
+        }
+    }
+    </table>    
+    
+}
+<script type="text/javascript">
+    /// <reference path="jquery-2.0.0-vsdoc.js" />
+    /// <reference path="jquery-ui-1.8.24.js" />
+    $(".wiadomosc").hide();
+    $(".klik").click(function () {
+        $(this).next('.wiadomosc').toggle();
+    });
+</script>
+
+
